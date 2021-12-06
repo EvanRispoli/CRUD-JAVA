@@ -1,0 +1,70 @@
+html,
+body {
+  height: 100%;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 10% auto;
+}
+
+
+
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="email"] {
+	margin-top: 15px;
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+	margin-top: 15px;
+  margin-bottom: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.btn-block{
+    margin-top: 15px;
+    display: block;
+    width: 100%;
+    
+}
+.confirmacao{
+  background-image: url();
+  background-attachment: scroll;
+  padding: 20px
+}
+.transparent-bgopc{
+	background: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 26px;
+}
+.main-divopc{
+	background-image: url("/TP1/img/concluido.jpg");
+  background-attachment: scroll;
+  text-align: center;
+}
+.transparent-bg{
+	background: rgba(245, 244, 242, 0.3);
+  padding: 50px;
+  color: black;
+  text-align: center;
+  font-size: 30px;
+}
