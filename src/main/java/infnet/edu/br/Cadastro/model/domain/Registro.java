@@ -5,18 +5,18 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 
-public class Financa {
+public class Registro {
     private LocalDateTime data;
     private Cliente usuario;
     private String descricao;
     private List<Categoria> categorias;
     private boolean planejado;
 
-    public Financa() {
+    public Registro() {
         data = LocalDateTime.now();
     }
 
-    public Financa(LocalDateTime data, Cliente usuario, String descricao, List<Categoria> categorias, boolean planejado) {
+    public Registro(LocalDateTime data, Cliente usuario, String descricao, List<Categoria> categorias, boolean planejado) {
         this.data = data;
         this.usuario = usuario;
         this.descricao = descricao;

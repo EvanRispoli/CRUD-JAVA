@@ -41,8 +41,8 @@
 			<c:if test="${empty user}">
 				<h1>Sistema de cadastro de pessoas</h1>
 				<p class="lead">Desenvolvimento JAVA Web - Springboot</p>
-				<p>Projeto realizado como requisito parcial avaliativo - 
-				Teste de Performance - TP3 da disciplina Desenvolvimento Web Java EE ;
+				<p>Projeto realizado como requisito avaliativo - 
+				Assessment da disciplina Desenvolvimento Web Java EE ;
 				</p>
 			</c:if>
 		</div>
