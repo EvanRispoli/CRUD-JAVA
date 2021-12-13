@@ -1,12 +1,13 @@
 package infnet.edu.br.Cadastro.model.service;
 
-import infnet.edu.br.Cadastro.model.domain.Receita;
-import infnet.edu.br.Cadastro.model.domain.Receita;
-import infnet.edu.br.Cadastro.model.repository.ReceitaRepository;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
+import org.springframework.data.domain.Sort;
+import infnet.edu.br.Cadastro.model.domain.Receita;
+import infnet.edu.br.Cadastro.model.domain.Usuario;
+import infnet.edu.br.Cadastro.model.repository.ReceitaRepository;
 
 @Service
 public class ReceitaService {
@@ -28,8 +29,8 @@ public class ReceitaService {
 
     }
 
-    public List<Receita> obterLista() {
-        return (List<Receita>) receitaRepository.findAll();
+    public List<Receita> obterLista(Usuario usuario) {
+        return (List<Receita>) receitaRepository.findAll(usuario.getId(), Sort.by(Sort.Direction.ASC, "nome"));
 
     }
 

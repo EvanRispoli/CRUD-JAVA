@@ -31,9 +31,9 @@
 	<!-- Responsive navbar-->
 	<c:import url="/WEB-INF/jsp/Menu.jsp" />
 	<!-- Page content-->
-	<form class="form" action="/despesa" method="post">
+	<form class="form-cadastro" action="/despesa" method="post">
 		<div class="text-center">
-			<img class="text-center" src="https://www.pngfind.com/pngs/m/416-4168092_infnet-2016-05-31-instituto-infnet-hd-png.png" alt="" width="80"
+			<img class="text-center" src="kakebo.png" alt="" width="80"
 				height="80">
 			<h1 class="h3 font-weight-normal Text-left">Cadastro de Despesas</h1>
 			<p>Aplicação utilizando SpringBoot</p>

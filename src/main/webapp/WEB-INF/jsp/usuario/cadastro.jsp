@@ -29,7 +29,7 @@
 
 <div class="form-cadastro">
   <div class="text-center mb-4">
-    <img class="mb-4" src="../img/Infnet-Logo.png" alt="" width="80" height="80">
+    <img class="mb-4" src="kakebo.png" alt="" width="80" height="80">
     <h1 class="h3 mb-3 font-weight-normal">Cadastro de Usuarios</h1>
   </div>
 

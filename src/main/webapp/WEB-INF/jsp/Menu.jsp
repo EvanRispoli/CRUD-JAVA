@@ -13,6 +13,8 @@
 			<a class="navbar-brand" href="/receitas">Receitas</a>
 			<a class="navbar-brand" href="/despesas ">Despesas</a>
 			<a class="navbar-brand" href="/economias">Economias</a>
+			<a class="navbar-brand" href="/categorias">Categorias</a>
+			<a class="navbar-brand" href="/registros">Registros</a>
 		</c:if>
 
 

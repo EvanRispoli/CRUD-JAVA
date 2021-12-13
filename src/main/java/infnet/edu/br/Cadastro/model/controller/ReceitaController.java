@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import infnet.edu.br.Cadastro.model.domain.Receita;
+import infnet.edu.br.Cadastro.model.domain.Usuario;
 import infnet.edu.br.Cadastro.model.service.ReceitaService;
 
 @Controller
@@ -22,21 +24,21 @@ public class ReceitaController {
 	}
 
 	@GetMapping(value = "/receitas")
-	public String telaLista(Model model) {
+	public String telaLista(Model model, @SessionAttribute("user") Usuario usuario) {
 
-		model.addAttribute("listaReceitas", receitaService.obterLista());
+		model.addAttribute("listaReceitas", receitaService.obterLista(usuario));
 
 		return "receita/lista";
 	}
 
 	@PostMapping(value = "/receita/incluir")
-	public String incluir(Model model, Receita receita) {
-		
+	public String incluir(Model model, Receita receita, @SessionAttribute("user") Usuario usuario) {
+		receita.setUsuario(usuario);
 		receitaService.incluir(receita);
 
 		model.addAttribute("nome", receita.getNome());
 		// return "redirect:/receitas";
-		return telaLista(model);
+		return telaLista(model, usuario);
 	}
 
 	@GetMapping(value = "/receita/{id}/excluir")

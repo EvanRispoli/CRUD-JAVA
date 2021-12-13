@@ -32,14 +32,14 @@
 
 		<div class="text-center mt-5">
 			<c:if test="${not empty user}">
-				<h2>Sistema de cadastro de pessoas</h2>
+				<h2>Sistema Financeiro</h2>
 				<h5>Seja Bem-vindo, ${user.nome}</h5>
 
 				<p class="lead">Desenvolvimento JAVA Web - Springboot</p>
 				<p>Assessment</p>
 			</c:if>
 			<c:if test="${empty user}">
-				<h1>Sistema de cadastro de pessoas</h1>
+				<h1>Sistema de orçamento financeiro</h1>
 				<p class="lead">Desenvolvimento JAVA Web - Springboot</p>
 				<p>Projeto realizado como requisito avaliativo - 
 				Assessment da disciplina Desenvolvimento Web Java EE ;

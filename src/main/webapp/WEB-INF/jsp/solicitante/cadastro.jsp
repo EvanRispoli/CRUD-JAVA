@@ -13,7 +13,7 @@
   <meta name="author" content="Evan Rispoli">
   <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
   <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
-  <title>Cadastro de Clientes</title>
+  <title>Cadastro de Solicitantes</title>
   <link href="bootstrap.min.css" rel="stylesheet">
   <link href="styles.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
@@ -29,8 +29,8 @@
 
 <div class="form-cadastro">
   <div class="text-center mb-4">
-    <img class="mb-4" src="../img/Infnet-Logo.png" alt="" width="80" height="80">
-    <h1 class="h3 mb-3 font-weight-normal">Cadastro de Clientes</h1>
+    <img class="mb-4" src="kakebo.png" alt="" width="80" height="80">
+    <h1 class="h3 mb-3 font-weight-normal">Cadastro de Solicitantes</h1>
   </div>
 
 

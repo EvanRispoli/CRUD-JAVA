@@ -1,12 +1,14 @@
 package infnet.edu.br.Cadastro.model.service;
 
-import infnet.edu.br.Cadastro.model.domain.Economia;
-import infnet.edu.br.Cadastro.model.domain.Receita;
-import infnet.edu.br.Cadastro.model.repository.EconomiaRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Sort;
+import infnet.edu.br.Cadastro.model.domain.Economia;
+import infnet.edu.br.Cadastro.model.domain.Usuario;
+import infnet.edu.br.Cadastro.model.repository.EconomiaRepository;
 
 @Service
 public class EconomiaService {
@@ -28,8 +30,8 @@ public class EconomiaService {
 
     }
 
-    public List<Economia> obterLista() {
-        return (List<Economia>) economiaRepository.findAll();
+    public List<Economia> obterLista(Usuario usuario) {
+        return (List<Economia>) economiaRepository.findAll(usuario.getId(), Sort.by(Sort.Direction.ASC, "nome"));
 
     }
 }

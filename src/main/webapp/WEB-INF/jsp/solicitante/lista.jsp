@@ -31,28 +31,27 @@
 	<!-- Responsive navbar-->
 	<c:import url="/WEB-INF/jsp/Menu.jsp" />
 	<!-- Page content-->
-	<form class="form-cadastro" action="/solicitante" method="post">
-		<div class="text-center">
-			<img class="text-center" src="https://www.pngfind.com/pngs/m/416-4168092_infnet-2016-05-31-instituto-infnet-hd-png.png" alt="" width="80"
-				height="80">
-			<h1 class="h3 font-weight-normal Text-left">Cadastro de Solicitantes</h1>
-			<a href="/solicitante">Novo Cadastro</a>
-			
-			
+	<div class="container">	
+		
+		<a href="/solicitante">Novo solicitante</a>
+	
+		<hr>
+		
+		<c:if test="${not empty mensagem}">
+			<div class="alert alert-danger">
+				 <strong>Atenção!</strong> ${mensagem}
+			</div>
+		</c:if>
 
-		</div>
-		<div class = "form-cadastro">
-			<hr>
-			<c:if test="${not empty nome}">
-				<div class="alert alert-success">
-					<strong>Yess!</strong> ${nome} cadastrado(a) com sucesso!
-				</div>
-
-			</c:if>
-
-			<c:if test="${not empty listaSolicitantes}">
-
-							<h4>Listagem de solicitantes (${listaSolicitantes.size()}):</h4>		
+		<c:if test="${not empty nome}">
+			<div class="alert alert-success">
+				 <strong>Confirmação!</strong> Solicitante ${nome} cadastrado com sucesso!!!
+			</div>
+		</c:if>
+		
+		<c:if test="${not empty listaSolicitantes}">
+		
+			<h4>Listagem de solicitantes (${listaSolicitantes.size()}):</h4>		
 			<table class="table table-striped">
 			    <thead>
 			      <tr>
@@ -77,13 +76,11 @@
 			      </c:forEach>
 			    </tbody>
 		  	</table>
-			</c:if>
-			<c:if test="${empty listaSolicitantes}">
-				<h5>Não existem solicitantes cadastrados!</h5>
-			</c:if>
-		</div>
-	</form>
-	<c:import url="/WEB-INF/jsp/footer.jsp" />
+	  	</c:if>
+	  			
+	  	<c:if test="${empty listaSolicitantes}">
+	  		<h4>Não existem solicitantes cadastrados!</h4>
+	  	</c:if>
+	</div>
 </body>
-
 </html>

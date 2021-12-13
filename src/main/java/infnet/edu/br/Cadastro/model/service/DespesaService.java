@@ -1,11 +1,14 @@
 package infnet.edu.br.Cadastro.model.service;
 
-import infnet.edu.br.Cadastro.model.domain.Despesa;
-import infnet.edu.br.Cadastro.model.repository.DespesaRepository;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import infnet.edu.br.Cadastro.model.domain.Despesa;
+import infnet.edu.br.Cadastro.model.domain.Usuario;
+import infnet.edu.br.Cadastro.model.repository.DespesaRepository;
 
 @Service
 public class DespesaService {
@@ -28,8 +31,8 @@ public class DespesaService {
 
     }
 
-    public List<Despesa> obterLista (){
-        return (List<Despesa>) despesaRepository.findAll();
+    public List<Despesa> obterLista (Usuario usuario){
+        return (List<Despesa>) despesaRepository.findAll(usuario.getId(), Sort.by(Sort.Direction.ASC, "nome"));
 
     }
 }

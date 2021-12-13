@@ -12,7 +12,7 @@ import infnet.edu.br.Cadastro.model.service.UsuarioService;
 
 @Component
 @Order(1)
-public class DataLoader implements ApplicationRunner  {
+public class UsuarioLoader implements ApplicationRunner  {
 	
 	@Autowired
 	private UsuarioService usuarioService;
@@ -20,39 +20,24 @@ public class DataLoader implements ApplicationRunner  {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 
+		
 		Endereco endereco = new Endereco();
-		endereco.setCep("05409930");
-		endereco.setLogradouro("Rua Oscar Freire");
-		endereco.setComplemento("1546");
-		endereco.setBairro("Pinheiros");
-		endereco.setLocalidade("São Paulo");
-		endereco.setUf("SP");
-
-
+		endereco.setCep("20010-020");
+		endereco.setLogradouro("Rua São José");
+		endereco.setComplemento("90");
+		endereco.setBairro("Centro");
+		endereco.setLocalidade("Rio de Janeiro");
+		endereco.setUf("RJ");
+		
+		
 		Usuario usuario = new Usuario();
-		usuario.setEmail("evan@rispoli.com");
-		usuario.setNome("Evan Rispoli");
+		usuario.setId(1);
+		usuario.setEmail("rodrigo@magalhaes.com");
+		usuario.setNome("Rodrigo Magalhães");
 		usuario.setSenha("123");
 		usuario.setAdmin(true);
 		usuario.setEndereco(endereco);
 		usuarioService.incluir(usuario);
-		
-		Endereco endereco1 = new Endereco();
-		endereco1.setCep("20010-020");
-		endereco1.setLogradouro("Rua São José");
-		endereco1.setComplemento("90");
-		endereco1.setBairro("Centro");
-		endereco1.setLocalidade("Rio de Janeiro");
-		endereco1.setUf("RJ");
-		
-		
-		Usuario usuario1 = new Usuario();
-		usuario1.setEmail("rodrigo@magalhaes.com");
-		usuario1.setNome("Rodrigo Magalhães");
-		usuario1.setSenha("123");
-		usuario1.setAdmin(true);
-		usuario1.setEndereco(endereco1);
-		usuarioService.incluir(usuario1);
 
 
 }

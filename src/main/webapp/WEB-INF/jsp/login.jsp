@@ -30,7 +30,7 @@
 				<img class="mb-4 logo" src="kakebo.png" alt="" width="80"
 					height="80">
 				<h6 class="h5 mb-12 font-weight-normal">Sistema de cadastro de
-					clientes</h6>
+					despesas</h6>
 
 				<c:if test="${not empty msg}">
 

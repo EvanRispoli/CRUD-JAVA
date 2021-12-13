@@ -23,7 +23,7 @@ public class SolicitanteLoader implements ApplicationRunner {
 		Usuario usuario = new Usuario();
 		usuario.setId(1);
 
-		Solicitante solicitante = new Solicitante("Joaozinho", "123456789-12", "joao@joao.com");
+		Solicitante solicitante = new Solicitante("Evan Rispoli", "123.456.789-12", "evan@rispoli.com");
 		solicitante.setUsuario(usuario);
 		
 		solicitanteService.incluir(solicitante);

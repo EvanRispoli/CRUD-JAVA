@@ -1,9 +1,20 @@
 package infnet.edu.br.Cadastro.model.domain;
 
-import javax.persistence.*;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
-@Table(name = "Categorias")
+@Table(name = "categorias")
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Categoria {
     @Id
@@ -16,8 +27,37 @@ public abstract class Categoria {
     private boolean recorrente;
     private float valor;
     private String tipo;
+	@ManyToOne
+	@JoinColumn(name = "idUsuario")
+	private Usuario usuario;
+	@ManyToMany(mappedBy = "categorias")
+	private List<Registro> registros;
 
-    public Categoria() {
+    public List<Registro> getRegistros() {
+		return registros;
+	}
+
+	public void setRegistros(List<Registro> registros) {
+		this.registros = registros;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public Categoria() {
 
     }
 
