@@ -14,7 +14,7 @@
 <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 <link rel="canonical"
 	href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
-<title>Cadastro de Usuários</title>
+<title>Cadastro de Solicitantes</title>
 <link href="./css/bootstrap.min.css" rel="stylesheet">
 <link href="./css/styles.css" rel="stylesheet">
 <link
@@ -31,12 +31,12 @@
 	<!-- Responsive navbar-->
 	<c:import url="/WEB-INF/jsp/Menu.jsp" />
 	<!-- Page content-->
-	<form class="form-cadastro" action="/pessoa" method="post">
+	<form class="form-cadastro" action="/solicitante" method="post">
 		<div class="text-center">
 			<img class="text-center" src="https://www.pngfind.com/pngs/m/416-4168092_infnet-2016-05-31-instituto-infnet-hd-png.png" alt="" width="80"
 				height="80">
-			<h1 class="h3 font-weight-normal Text-left">Cadastro de Clientes</h1>
-			<a href="/cliente">Novo Cadastro</a>
+			<h1 class="h3 font-weight-normal Text-left">Cadastro de Solicitantes</h1>
+			<a href="/solicitante">Novo Cadastro</a>
 			
 			
 
@@ -50,41 +50,36 @@
 
 			</c:if>
 
-			<c:if test="${not empty listaClientes}">
+			<c:if test="${not empty listaSolicitantes}">
 
-				<h4>Lista de Usuários (${listaClientes.size()}):</h4>
-
-
-				<table class="table table-striped">
-					<thead>
-
-						<tr>
-
-							<th>#</th>
-							<th>Nome</th>
-							<th>E-mail</th>
-							<th>CPF</th>
-							<th><th>
-							
-							
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach var="c" items="${listaClientes }">
-							<tr>
-								<th>${c.id}</th>
-								<th>${c.nome}</th>
-								<th>${c.email}</th>
-								<th>${c.cpf}</th>
-								<th>${c.usuario.nome}</th>
-                                <th><a href="/cliente/${u.id}/excluir">Excluir</a></th>
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
+							<h4>Listagem de solicitantes (${listaSolicitantes.size()}):</h4>		
+			<table class="table table-striped">
+			    <thead>
+			      <tr>
+			        <th>#</th>
+			        <th>Nome</th>
+			        <th>CPF</th>
+			        <th>Email</th>
+			        <th>Usuário</th>
+			        <th></th>
+			      </tr>
+			    </thead>
+			    <tbody>
+			    	<c:forEach var="s" items="${listaSolicitantes}">
+				      <tr>
+				      	<td>${s.id}</td>
+				        <td>${s.nome}</td>
+				        <td>${s.cpf}</td>
+				        <td>${s.email}</td>
+				        <td>${s.usuario.nome}</td>
+				        <td><a href="/solicitante/${s.id}/excluir">Excluir</a></td>
+				      </tr>
+			      </c:forEach>
+			    </tbody>
+		  	</table>
 			</c:if>
-			<c:if test="${empty listaClientes}">
-				<h5>Não existem clientes cadastrados!</h5>
+			<c:if test="${empty listaSolicitantes}">
+				<h5>Não existem solicitantes cadastrados!</h5>
 			</c:if>
 		</div>
 	</form>

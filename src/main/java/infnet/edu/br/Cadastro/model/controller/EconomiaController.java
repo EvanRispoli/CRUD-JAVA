@@ -45,7 +45,7 @@ public class EconomiaController {
 
 		economiaService.excluir(id);
 
-		return "redirect:/economias";
+		return "economia/lista";
 
 	}
 

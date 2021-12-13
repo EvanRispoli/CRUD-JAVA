@@ -34,7 +34,7 @@
   </div>
 
 
-    <form class="form-cadastro" action="/cliente/incluir" method="post">
+    <form class="form-cadastro" action="/solicitante/incluir" method="post">
     <div class="form-group ">
       <label for="nome">Nome:</label> <input type="text" class="form-control" id="nome" placeholder="Informe um nome"
         name="nome" required autofocus value="Elberth">

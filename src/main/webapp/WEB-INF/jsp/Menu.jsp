@@ -9,7 +9,7 @@
 		<c:if test="${not empty user}">
 
 			<a class="navbar-brand" href="/usuarios">Usuários</a>
-			<a class="navbar-brand" href="/clientes">Clientes</a>
+			<a class="navbar-brand" href="/solicitantes">Solicitantes</a>
 			<a class="navbar-brand" href="/receitas">Receitas</a>
 			<a class="navbar-brand" href="/despesas ">Despesas</a>
 			<a class="navbar-brand" href="/economias">Economias</a>
