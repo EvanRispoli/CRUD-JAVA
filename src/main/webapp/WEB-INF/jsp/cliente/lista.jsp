@@ -31,16 +31,17 @@
 	<!-- Responsive navbar-->
 	<c:import url="/WEB-INF/jsp/Menu.jsp" />
 	<!-- Page content-->
-	<form class="form" action="/pessoa" method="post">
+	<form class="form-cadastro" action="/pessoa" method="post">
 		<div class="text-center">
 			<img class="text-center" src="https://www.pngfind.com/pngs/m/416-4168092_infnet-2016-05-31-instituto-infnet-hd-png.png" alt="" width="80"
 				height="80">
-			<h1 class="h3 font-weight-normal Text-left">Cadastro de Usuários</h1>
+			<h1 class="h3 font-weight-normal Text-left">Cadastro de Clientes</h1>
+			<a href="/cliente">Novo Cadastro</a>
 			
 			
 
 		</div>
-		<div>
+		<div class = "form-cadastro">
 			<hr>
 			<c:if test="${not empty nome}">
 				<div class="alert alert-success">
@@ -49,9 +50,9 @@
 
 			</c:if>
 
-			<c:if test="${not empty listaUsuarios}">
+			<c:if test="${not empty listaClientes}">
 
-				<h4>Lista de Usuários (${listaUsuarios.size()}):</h4>
+				<h4>Lista de Usuários (${listaClientes.size()}):</h4>
 
 
 				<table class="table table-striped">
@@ -62,30 +63,28 @@
 							<th>#</th>
 							<th>Nome</th>
 							<th>E-mail</th>
-							<th>Cadastros</th>
-							<c:if test="${user.admin}">
-							    <th><th>
-							</c:if>
+							<th>CPF</th>
+							<th><th>
+							
 							
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="u" items="${listaUsuarios }">
+						<c:forEach var="c" items="${listaClientes }">
 							<tr>
-								<th>${u.id}</th>
-								<th>${u.nome}</th>
-								<th>${u.email}</th>
-								<th>${u.clientes.size()}</th>
-								<c:if test="${user.admin}">
-                                    <th><a href="/usuario/${u.id}/excluir">Excluir</a></th>
-                                </c:if>
+								<th>${c.id}</th>
+								<th>${c.nome}</th>
+								<th>${c.email}</th>
+								<th>${c.cpf}</th>
+								<th>${c.usuario.nome}</th>
+                                <th><a href="/cliente/${u.id}/excluir">Excluir</a></th>
 							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
 			</c:if>
-			<c:if test="${empty listaUsuarios}">
-				<h5>Não existem usuários cadastradas!</h5>
+			<c:if test="${empty listaClientes}">
+				<h5>Não existem clientes cadastrados!</h5>
 			</c:if>
 		</div>
 	</form>

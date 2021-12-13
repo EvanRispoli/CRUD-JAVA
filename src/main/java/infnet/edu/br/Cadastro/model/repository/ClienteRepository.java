@@ -6,12 +6,12 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import infnet.edu.br.Cadastro.model.domain.Pessoa;
+import infnet.edu.br.Cadastro.model.domain.Cliente;
 
 @Repository
-public interface PessoaRepository extends CrudRepository<Pessoa, Integer> {
+public interface ClienteRepository extends CrudRepository<Cliente, Integer> {
 
-	@Query("from Pessoa u where u.usuario.id =:id")
-	public List<Pessoa> obterLista(Integer id);
+	@Query("from Cliente u where u.usuario.id =:id")
+	public List<Cliente> obterLista(Integer id);
 
 }

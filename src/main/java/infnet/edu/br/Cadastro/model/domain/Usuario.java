@@ -22,7 +22,7 @@ public class Usuario {
 
 	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
 	@JoinColumn(name = "idUsuario")
-	private List<Pessoa> pessoas;
+	private List<Cliente> clientes;
 
 	public Integer getId() {
 		return id;
@@ -72,11 +72,11 @@ public class Usuario {
 		this.endereco = endereco;
 	}
 
-	public List<Pessoa> getPessoas() {
-		return pessoas;
+	public List<Cliente> getClientes() {
+		return clientes;
 	}
 
-	public void setPessoas(List<Pessoa> pessoas) {
-		this.pessoas = pessoas;
+	public void setClientes(List<Cliente> clientes) {
+		this.clientes = clientes;
 	}
 }

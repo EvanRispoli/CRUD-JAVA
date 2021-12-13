@@ -32,13 +32,14 @@ public class ProdutoLoader implements ApplicationRunner {
                 "Renda extra",
                 true,
                 100,
-                "Desejado");
+                "Esperado");
         try {
             receita.setFonte("Prof. Elberth");
         } catch (FonteVaziaInvalidaException e) {
             e.getMessage();
         }
-        receita.setOpcaoRecorrencia(0);
+        receita.setOpcaoRecorrencia('U');
+        receita.determinaRecorrencia();
 
         receitaService.incluir(receita);
 
@@ -54,7 +55,7 @@ public class ProdutoLoader implements ApplicationRunner {
         } catch (BeneficiarioVazioException e) {
             e.getMessage();
         }
-        despesa.setOpcaoRecorrencia(2);
+        despesa.setOpcaoRecorrencia('M');
         despesa.determinaRecorrencia();
 
         despesaService.incluir(despesa);
@@ -71,7 +72,7 @@ public class ProdutoLoader implements ApplicationRunner {
         } catch (BeneficiarioVazioException e) {
             e.getMessage();
         }
-        despesa1.setOpcaoRecorrencia(2);
+        despesa1.setOpcaoRecorrencia('T');
         despesa1.determinaRecorrencia();
 
         despesaService.incluir(despesa1);

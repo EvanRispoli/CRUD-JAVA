@@ -60,9 +60,10 @@
 			</div>
 
 			<button class="btn btn-lg btn-secondary btn-block" type="submit">Entrar</button>
-			<p class="mt-5 mb-3 text-muted text-center">&copy; Evan Rispoli</p>
+			
 		</form>
 	</div>
+	<c:import url="/WEB-INF/jsp/footer.jsp" />
 </body>
 
 </html>

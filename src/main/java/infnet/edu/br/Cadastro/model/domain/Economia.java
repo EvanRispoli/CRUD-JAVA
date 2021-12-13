@@ -15,8 +15,14 @@ public class Economia extends Categoria {
     private String objetivo;
     private int opcaoRecorrencia;
     private String recorrencia;
+    
+    
 
-    public Integer getId() {
+    public Economia() {
+		super();
+	}
+
+	public Integer getId() {
         return id;
     }
 

@@ -36,7 +36,7 @@
 				<h5>Seja Bem-vindo, ${user.nome}</h5>
 
 				<p class="lead">Desenvolvimento JAVA Web - Springboot</p>
-				<p>TP3</p>
+				<p>Assessment</p>
 			</c:if>
 			<c:if test="${empty user}">
 				<h1>Sistema de cadastro de pessoas</h1>
@@ -53,5 +53,6 @@
 	<!-- Core theme JS-->
 	<script src="js/scripts.js"></script>
 </body>
+<c:import url="/WEB-INF/jsp/footer.jsp" />
 </html>
 

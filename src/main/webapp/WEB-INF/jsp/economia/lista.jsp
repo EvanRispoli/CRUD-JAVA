@@ -9,12 +9,12 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description"
-	content="TP1 da disciplina Desenvolvimento Web com Java EE ministrada pelo professo Elberth Moraes">
+	content="Assessment da disciplina Desenvolvimento Web com Java EE ministrada pelo professo Elberth Moraes">
 <meta name="author" content="Evan Rispoli">
 <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 <link rel="canonical"
 	href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
-<title>Cadastro de Usuários</title>
+<title>Lista de economias</title>
 <link href="./css/bootstrap.min.css" rel="stylesheet">
 <link href="./css/styles.css" rel="stylesheet">
 <link
@@ -31,13 +31,13 @@
 	<!-- Responsive navbar-->
 	<c:import url="/WEB-INF/jsp/Menu.jsp" />
 	<!-- Page content-->
-	<form class="form" action="/pessoa" method="post">
+	<form class="form" action="/economia" method="post">
 		<div class="text-center">
 			<img class="text-center" src="https://www.pngfind.com/pngs/m/416-4168092_infnet-2016-05-31-instituto-infnet-hd-png.png" alt="" width="80"
 				height="80">
-			<h1 class="h3 font-weight-normal Text-left">Cadastro de Usuários</h1>
-			
-			
+			<h1 class="h3 font-weight-normal Text-left">Cadastro de Economias</h1>
+			<p>Aplicação utilizando SpringBoot</p>
+			<a href="/economia">Novo Cadastro</a>
 
 		</div>
 		<div>
@@ -49,43 +49,48 @@
 
 			</c:if>
 
-			<c:if test="${not empty listaUsuarios}">
+			<c:if test="${not empty listaEconomias}">
 
-				<h4>Lista de Usuários (${listaUsuarios.size()}):</h4>
+				<h4>Listagem de es (${listaEconomias.size()}):</h4>
 
 
 				<table class="table table-striped">
 					<thead>
 
 						<tr>
-
 							<th>#</th>
 							<th>Nome</th>
-							<th>E-mail</th>
-							<th>Cadastros</th>
-							<c:if test="${user.admin}">
-							    <th><th>
-							</c:if>
-							
+							<th>Descrição</th>
+							<th>Objetivo</th>
+							<th>Categoria</th>
+							<th>Recorrência</th>
+							<th>Valor</th>
+							<th>Vencimento</th>
+							<th>Tipo</th>
+							<th></th>
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="u" items="${listaUsuarios }">
+					data, nome, descricao, categoria, recorrente, valor, tipo
+						<c:forEach var="e" items="${listaEconomias }">
 							<tr>
-								<th>${u.id}</th>
-								<th>${u.nome}</th>
-								<th>${u.email}</th>
-								<th>${u.clientes.size()}</th>
-								<c:if test="${user.admin}">
-                                    <th><a href="/usuario/${u.id}/excluir">Excluir</a></th>
-                                </c:if>
+								<th>${e.id}</th>
+								<th>${e.nome}</th>
+								<th>${e.comentario}</th>
+								<th>${e.objetivo}</th>
+								<th>${e.categoria}</th>
+								<th>${e.recorrencia}</th>
+								<th>${e.valor}</th>
+								<th>${e.dataVencimento}</th>
+								<th>${e.tipo}</th>
+								<th><a href="/economia/${d.id}/excluir">Excluir</a></th>
 							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
 			</c:if>
-			<c:if test="${empty listaUsuarios}">
-				<h5>Não existem usuários cadastradas!</h5>
+			<c:if test="${empty listaEconomias}">
+				<h5>Não existem economias cadastradas!</h5>
 			</c:if>
 		</div>
 	</form>

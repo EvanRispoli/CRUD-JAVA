@@ -34,6 +34,23 @@ public class DataLoader implements ApplicationRunner  {
 		usuario.setAdmin(true);
 		usuario.setEndereco(endereco);
 		usuarioService.incluir(usuario);
+		
+		Endereco endereco1 = new Endereco();
+		endereco1.setCep("20010-020");
+		endereco1.setLogradouro("Rua São José");
+		endereco1.setComplemento("90");
+		endereco1.setBairro("Centro");
+		endereco1.setLocalidade("Rio de Janeiro");
+		endereco1.setUf("RJ");
+		
+		
+		Usuario usuario1 = new Usuario();
+		usuario1.setEmail("rodrigo@magalhaes.com");
+		usuario1.setNome("Rodrigo Magalhães");
+		usuario1.setSenha("123");
+		usuario1.setAdmin(true);
+		usuario1.setEndereco(endereco1);
+		usuarioService.incluir(usuario1);
 
 
 }

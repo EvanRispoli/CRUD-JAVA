@@ -14,12 +14,19 @@ public class Receita extends Categoria {
     private String fonte;
     private int opcaoRecorrencia;
     private String recorrencia;
+    
+    
+    
 
     public Integer getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public Receita() {
+		super();
+	}
+
+	public void setId(Integer id) {
         this.id = id;
     }
 

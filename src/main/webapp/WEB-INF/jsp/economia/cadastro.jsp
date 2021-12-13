@@ -13,7 +13,7 @@
   <meta name="author" content="Evan Rispoli">
   <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
   <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
-  <title>Cadastro de Despesas</title>
+  <title>Cadastro de Economias</title>
   <link href="bootstrap.min.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
   <link href="styles.css" rel="stylesheet">
@@ -28,10 +28,10 @@
   <c:import url="/WEB-INF/jsp/Menu.jsp" />
   <!-- Page content-->
   <div class="container">
-    <form class="form-cadastro" action="/despesa/incluir" method="post">
+    <form class="form-cadastro" action="/economia/incluir" method="post">
       <div class="text-center mb-4">
         <img class="mb-4" src="kakebo.png" alt="" width="80" height="80">
-        <h1 class="h3 mb-3 font-weight-normal">Cadastro de Despesas</h1>
+        <h1 class="h3 mb-3 font-weight-normal">Cadastro de Economias</h1>
         <p>Kakebo</p>
       </div>
 
@@ -47,20 +47,18 @@
           id="descricao" placeholder="Informações adicionais" name="comentario" required autofocus>
       </div>
       <div class="form-group ">
-        <label for="beneficiario" class="form-label">Beneficiário:</label> <input type="text" class="form-control"
-          id="beneficiario" placeholder="Informe um beneficiário" name="beneficiario" required autofocus>
+        <label for="objetivo" class="form-label">Objetivo:</label> <input type="text" class="form-control"
+          id="objetivo" placeholder="Informe um objetivo" name="objetivo" required autofocus>
       </div>
 
       <div class="form-group">
         <label for="categoria" class="form-label">Categoria:</label>
         <select name="categoria" id="categoria" class="form-control">
           <option>Selecione</option>
-          <option value="Moradia">Moradia</option>
-          <option value="Supermercado">Supermercado</option>
-          <option value="Saude">Moradia</option>
+          <option value="Moradia">Viagem</option>
+          <option value="Supermercado">Carro Novo</option>
+          <option value="Saude">Cursos</option>
           <option value="Educacao">Educação</option>
-          <option value="Lazer">Lazer</option>
-          <option value="Compras">Compras</option>
           <option value="Outros">Outros</option>
         </select>
       </div>
@@ -77,16 +75,16 @@
           <option value="Lançamento Anual">Lançamento Anual</option>
         </select>
       </div>
-
+      
+      
       <div class="form-group">
         <label for="tipo" class="form-label">Tipo:</label>
         <select name="tipo" id="recorrencia" class="form-control">
           <option>Selecione</option>
-          <option value="Necessario">Necessário</option>
-          <option value="Superfluo">Supérfluo</option>
+          <option value="Longo prazo">Longo prazo</option>
+          <option value="Curto prazo">Curto prazo</option>
         </select>
       </div>
-
 
       <div class="form-group">
         <label for="valor" class="form-label">Valor (R$):</label> <input type="number" format="currency" step="0.01"
@@ -95,7 +93,7 @@
 
       <div class="form-group">
         <label for="Data" class="form-label">Data:</label>
-        <input type="date" id="data" name="data" class="form-control">
+        <input type="date" id="dataVencimento" name="dataVencimento" class="form-control">
       </div>
 
       <div class="form-group form-label">
@@ -106,7 +104,7 @@
 
   </div>
   </div>
-
+<c:import url="/WEB-INF/jsp/footer.jsp" />
 </body>
 
 </html>
