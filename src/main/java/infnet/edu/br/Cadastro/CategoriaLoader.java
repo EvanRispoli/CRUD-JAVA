@@ -32,8 +32,8 @@ public class CategoriaLoader implements ApplicationRunner {
 		Usuario usuario = new Usuario();
 		usuario.setId(1);
 
-		Receita receita = new Receita("Infnet", "Salario", "Salario", "Quinzena 1", 2 );
-/*		receita.setFonte("Infnet");
+		Receita receita = new Receita();
+		receita.setFonte("Infnet");
 		receita.setNome("Salario");
 		receita.setCategoria("Salario");
 		receita.setComentario("Quinzena 1");
@@ -41,7 +41,7 @@ public class CategoriaLoader implements ApplicationRunner {
 		receita.setValor((float) 6532.36);
 		receita.setTipo("Esperado");
 		receita.setDataVencimento("30/12/2021");
-*/		receita.determinaRecorrencia();
+		receita.determinaRecorrencia();
 		receitaService.incluir(receita);
 
 		Despesa despesa = new Despesa();
