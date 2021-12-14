@@ -27,9 +27,11 @@ public class DespesaController {
 	public String telaLista(Model model, @SessionAttribute("user") Usuario usuario) {
 
 		model.addAttribute("listaDespesas", despesaService.obterLista(usuario));
+		
 
 		return "despesa/lista";
 	}
+	
 
 	@PostMapping(value = "/despesa/incluir")
 	public String incluir(Model model, Despesa despesa,  @SessionAttribute("user") Usuario usuario) {
