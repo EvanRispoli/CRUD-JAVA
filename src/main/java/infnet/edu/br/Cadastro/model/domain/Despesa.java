@@ -14,7 +14,7 @@ public class Despesa extends Categoria{
     private int opcaoRecorrencia;
     private String recorrencia;
 
-
+    
 
     public Despesa() {
         super();

@@ -66,11 +66,12 @@
 							<th>Recorrência</th>
 							<th>Valor</th>
 							<th>Tipo</th>
+							<th>Vencimento</th>
+							
 							<th></th>
 						</tr>
 					</thead>
 					<tbody>
-					data, nome, descricao, categoria, recorrente, valor, tipo
 						<c:forEach var="d" items="${listaDespesas }">
 							<tr>
 								<th>${d.id}</th>
@@ -81,6 +82,7 @@
 								<th>${d.recorrencia}</th>
 								<th>${d.valor}</th>
 								<th>${d.tipo}</th>
+								<th>${d.dataVencimento}</th>
 								<th><a href="/despesa/${d.id}/excluir">Excluir</a></th>
 							</tr>
 						</c:forEach>

@@ -95,7 +95,7 @@
 
       <div class="form-group">
         <label for="Data" class="form-label">Data:</label>
-        <input type="date" id="data" name="data" class="form-control">
+        <input type="date" id="data" name="dataVencimento" class="form-control">
       </div>
 
       <div class="form-group form-label">

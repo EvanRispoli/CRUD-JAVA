@@ -71,7 +71,6 @@
 						</tr>
 					</thead>
 					<tbody>
-					data, nome, descricao, categoria, recorrente, valor, tipo
 						<c:forEach var="e" items="${listaEconomias }">
 							<tr>
 								<th>${e.id}</th>

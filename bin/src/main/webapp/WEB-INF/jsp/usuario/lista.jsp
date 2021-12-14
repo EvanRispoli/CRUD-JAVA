@@ -33,7 +33,7 @@
 	<!-- Page content-->
 	<form class="form" action="/pessoa" method="post">
 		<div class="text-center">
-			<img class="text-center" src="https://www.pngfind.com/pngs/m/416-4168092_infnet-2016-05-31-instituto-infnet-hd-png.png" alt="" width="80"
+			<img class="text-center" src="kakebo.png" alt="" width="80"
 				height="80">
 			<h1 class="h3 font-weight-normal Text-left">Cadastro de Usuários</h1>
 			
@@ -63,6 +63,9 @@
 							<th>Nome</th>
 							<th>E-mail</th>
 							<th>Cadastros</th>
+							<c:if test="${user.admin}">
+							    <th><th>
+							</c:if>
 							
 						</tr>
 					</thead>
@@ -72,9 +75,10 @@
 								<th>${u.id}</th>
 								<th>${u.nome}</th>
 								<th>${u.email}</th>
-								<th>${u.pessoas.size()}</th>
-
-								<th><a href="/usuario/${u.id}/excluir">Excluir</a></th>
+								<th>${u.clientes.size()}</th>
+								<c:if test="${user.admin}">
+                                    <th><a href="/usuario/${u.id}/excluir">Excluir</a></th>
+                                </c:if>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -85,6 +89,7 @@
 			</c:if>
 		</div>
 	</form>
+	<c:import url="/WEB-INF/jsp/footer.jsp" />
 </body>
 
 </html>

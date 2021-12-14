@@ -6,12 +6,10 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import infnet.edu.br.Cadastro.exception.BeneficiarioVazioException;
-import infnet.edu.br.Cadastro.exception.FonteVaziaInvalidaException;
-import infnet.edu.br.Cadastro.exception.ObjetivoVazioInvalido;
 import infnet.edu.br.Cadastro.model.domain.Despesa;
 import infnet.edu.br.Cadastro.model.domain.Economia;
 import infnet.edu.br.Cadastro.model.domain.Receita;
+import infnet.edu.br.Cadastro.model.domain.Solicitante;
 import infnet.edu.br.Cadastro.model.domain.Usuario;
 import infnet.edu.br.Cadastro.model.service.DespesaService;
 import infnet.edu.br.Cadastro.model.service.EconomiaService;
@@ -31,6 +29,9 @@ public class CategoriaLoader implements ApplicationRunner {
 	public void run(ApplicationArguments args) throws Exception {
 		Usuario usuario = new Usuario();
 		usuario.setId(1);
+		
+		Solicitante solicitante = new Solicitante();
+		solicitante.setId(1);
 
 		Receita receita = new Receita();
 		receita.setFonte("Infnet");
@@ -41,6 +42,7 @@ public class CategoriaLoader implements ApplicationRunner {
 		receita.setValor((float) 6532.36);
 		receita.setTipo("Esperado");
 		receita.setDataVencimento("30/12/2021");
+		receita.setUsuario(usuario);
 		receita.determinaRecorrencia();
 		receitaService.incluir(receita);
 
@@ -53,6 +55,7 @@ public class CategoriaLoader implements ApplicationRunner {
 		despesa.setValor((float) 250.36);
 		despesa.setTipo("Necessario");
 		despesa.setDataVencimento("12/12/2021");
+		despesa.setUsuario(usuario);
 		despesa.determinaRecorrencia();
 		despesaService.incluir(despesa);
 
@@ -65,8 +68,11 @@ public class CategoriaLoader implements ApplicationRunner {
 		economia.setValor((float) 250.36);
 		economia.setTipo("Necessario");
 		economia.setDataVencimento("12/12/2021");
+		economia.setUsuario(usuario);
 		economia.determinaRecorrencia();
 		economiaService.incluir(economia);
+		
+		
 
 	}
 }

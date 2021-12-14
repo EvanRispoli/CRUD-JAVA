@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 import infnet.edu.br.Cadastro.model.domain.Categoria;
 import infnet.edu.br.Cadastro.model.domain.Despesa;
+import infnet.edu.br.Cadastro.model.domain.Economia;
 import infnet.edu.br.Cadastro.model.domain.Receita;
 import infnet.edu.br.Cadastro.model.domain.Registro;
 import infnet.edu.br.Cadastro.model.domain.Solicitante;
@@ -33,13 +34,17 @@ public class RegistroLoader implements ApplicationRunner {
 		
 		Receita salario = new Receita();		
 		salario.setId(2);
-
+		
+		Economia economia = new Economia();
+		economia.setId(3);
+		
 		Solicitante solicitante = new Solicitante();
 		solicitante.setId(1);
 		
 		List<Categoria> listaCategorias = new ArrayList<Categoria>();
 		listaCategorias.add(conta);
 		listaCategorias.add(salario);
+		listaCategorias.add(economia);
 				
 		Registro registro = new Registro();
 		registro.setDescricao("Registro Principal Loader");

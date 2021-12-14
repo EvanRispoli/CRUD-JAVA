@@ -12,12 +12,18 @@
 	<groupId>infnet.edu.br</groupId>
 	<artifactId>Cadastro-de-PessoasTP2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Cadastro-de-Pessoas-TP2</name>
-	<description>TP2 - [21GRLADS01BDJ302] Desenvolvimento Web com Java EE [21E4_3]</description>
+	<name>Kakebo</name>
+	<description>Kakebo - Assessment - [21GRLADS01BDJ302] Desenvolvimento Web com Java EE [21E4_3]</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+			<version>3.0.5</version>
+		</dependency>
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

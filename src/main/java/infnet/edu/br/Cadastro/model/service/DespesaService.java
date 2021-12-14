@@ -1,5 +1,6 @@
 package infnet.edu.br.Cadastro.model.service;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;

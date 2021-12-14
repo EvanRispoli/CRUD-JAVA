@@ -9,20 +9,14 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description"
-	content="TP1 da disciplina Desenvolvimento Web com Java EE ministrada pelo professo Elberth Moraes">
+	content="Assessment da disciplina Desenvolvimento Web com Java EE ministrada pelo professo Elberth Moraes">
 <meta name="author" content="Evan Rispoli">
 <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
-<link rel="canonical"
-	href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+<link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
 <title>Login</title>
-<link href="./css/bootstrap.min.css" rel="stylesheet">
-<link href="./css/styles.css" rel="stylesheet">
-<link href="./css/style.css" rel="stylesheet">
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
-	rel="stylesheet">
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+<link href="styles.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+<script	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </head>
 
@@ -33,10 +27,10 @@
 	<div class="container">
 		<form class="form-signin" action="/login" method="post">
 			<div class="text-center mb-4">
-				<img class="mb-4 logo" src="img/Infnet-Logo.png" alt="" width="80"
+				<img class="mb-4 logo" src="kakebo.png" alt="" width="80"
 					height="80">
 				<h6 class="h5 mb-12 font-weight-normal">Sistema de cadastro de
-					clientes</h6>
+					despesas</h6>
 
 				<c:if test="${not empty msg}">
 
@@ -65,10 +59,11 @@
 					for="inputPassword">Senha</label>
 			</div>
 
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
-			<p class="mt-5 mb-3 text-muted text-center">&copy; Evan Rispoli</p>
+			<button class="btn btn-lg btn-secondary btn-block" type="submit">Entrar</button>
+			
 		</form>
 	</div>
+	<c:import url="/WEB-INF/jsp/footer.jsp" />
 </body>
 
 </html>
