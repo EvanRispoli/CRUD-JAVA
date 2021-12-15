@@ -30,10 +30,7 @@
 	<c:import url="/WEB-INF/jsp/Menu.jsp" />
 
 	<div class="container">
-		<div class="text-center">
-			<img class="text-center" src="kakebo.png" alt="" width="80"
-				height="80">
-		</div>
+		
 
 		<c:if test="${not empty categoria}">
 			<div class="alert alert-success">

@@ -9,12 +9,12 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description"
-	content="TP1 da disciplina Desenvolvimento Web com Java EE ministrada pelo professo Elberth Moraes">
+	content="Assessment da disciplina Desenvolvimento Web com Java EE ministrada pelo professo Elberth Moraes">
 <meta name="author" content="Evan Rispoli">
 <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 <link rel="canonical"
 	href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
-<title>Cadastro de Usuários</title>
+<title>Sistema financeiro</title>
 <link href="./css/bootstrap.min.css" rel="stylesheet">
 <link href="./css/styles.css" rel="stylesheet">
 <link
@@ -25,23 +25,17 @@
 <link href="./css/style.css" rel="stylesheet">
 
 </head>
-
 <body>
 
 	<!-- Responsive navbar-->
+	<!-- Responsive navbar-->
 	<c:import url="/WEB-INF/jsp/Menu.jsp" />
 	<!-- Page content-->
-	<form class="form" action="/pessoa" method="post">
-		<div class="text-center">
-			<img class="text-center" src="kakebo.png" alt="" width="80"
-				height="80">
-			<h1 class="h3 font-weight-normal Text-left">Cadastro de Usuários</h1>
-			
-			
+	<div class="container">	
+		
 
-		</div>
-		<div>
-			<hr>
+	
+		<hr>
 			<c:if test="${not empty nome}">
 				<div class="alert alert-success">
 					<strong>Yess!</strong> ${nome} cadastrado(a) com sucesso!

@@ -14,7 +14,7 @@
 <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 <link rel="canonical"
 	href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
-<title>Lista de registros</title>
+<title>Sistema financeiro</title>
 <link href="./css/bootstrap.min.css" rel="stylesheet">
 <link href="./css/styles.css" rel="stylesheet">
 <link
@@ -25,23 +25,17 @@
 <link href="./css/style.css" rel="stylesheet">
 
 </head>
-
 <body>
 
 	<!-- Responsive navbar-->
-<c:import url="/WEB-INF/jsp/Menu.jsp" />
+	<!-- Responsive navbar-->
+	<c:import url="/WEB-INF/jsp/Menu.jsp" />
 	<!-- Page content-->
-	<form class="form" action="/registro" method="post">
-		<div class="text-center">
-			<img class="text-center" src="kakebo.png" alt="" width="80"
-				height="80">
-			<h1 class="h3 font-weight-normal Text-left">Registros</h1>
-			<p>Aplicação utilizando SpringBoot</p>
-			<a href="/registro">Novo Cadastro</a>
-
-		</div>
-		<div>
-			<hr>
+	<div class="container">	
+		
+		<a href="/solicitante">Novo registro</a>
+	
+		<hr>
 			<c:if test="${not empty nome}">
 				<div class="alert alert-success">
 					<strong>Yess!</strong> ${nome} cadastrado(a) com sucesso!

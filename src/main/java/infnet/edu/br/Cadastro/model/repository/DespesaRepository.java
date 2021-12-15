@@ -13,6 +13,6 @@ import java.util.List;
 
 @Repository
 public interface DespesaRepository extends CrudRepository<Despesa, Integer> {
-    @Query("from Despesa d where d.id =:id")
+    @Query("from Despesa d where d.usuario.id =:id")
     public List<Despesa> findAll(Integer id, Sort by);
 }

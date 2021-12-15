@@ -14,7 +14,7 @@
 <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 <link rel="canonical"
 	href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
-<title>Lista de economias</title>
+<title>Sistema financeiro</title>
 <link href="./css/bootstrap.min.css" rel="stylesheet">
 <link href="./css/styles.css" rel="stylesheet">
 <link
@@ -29,19 +29,14 @@
 <body>
 
 	<!-- Responsive navbar-->
+	<!-- Responsive navbar-->
 	<c:import url="/WEB-INF/jsp/Menu.jsp" />
 	<!-- Page content-->
-	<form class="form" action="/economia" method="post">
-		<div class="text-center">
-			<img class="text-center" src="kakebo.png" alt="" width="80"
-				height="80">
-			<h1 class="h3 font-weight-normal Text-left">Cadastro de Economias</h1>
-			<p>Aplicação utilizando SpringBoot</p>
-			<a href="/economia">Novo Cadastro</a>
-
-		</div>
-		<div>
-			<hr>
+	<div class="container">	
+		
+		<a href="/solicitante">Nova economia</a>
+	
+		<hr>
 			<c:if test="${not empty nome}">
 				<div class="alert alert-success">
 					<strong>Yess!</strong> ${nome} cadastrado(a) com sucesso!
@@ -51,7 +46,7 @@
 
 			<c:if test="${not empty listaEconomias}">
 
-				<h4>Listagem de es (${listaEconomias.size()}):</h4>
+				<h4>Listagem de economias (${listaEconomias.size()}):</h4>
 
 
 				<table class="table table-striped">
