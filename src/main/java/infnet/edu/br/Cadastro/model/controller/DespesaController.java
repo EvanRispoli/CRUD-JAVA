@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import infnet.edu.br.Cadastro.model.domain.Despesa;
+import infnet.edu.br.Cadastro.model.domain.Receita;
 import infnet.edu.br.Cadastro.model.domain.Usuario;
 import infnet.edu.br.Cadastro.model.service.DespesaService;
+import infnet.edu.br.Cadastro.model.service.ReceitaService;
 
 @Controller
 public class DespesaController {
@@ -20,37 +22,40 @@ public class DespesaController {
 
 	@GetMapping(value = "/despesa")
 	public String telaCadastro() {
-		return "despesa/cadastro";
+		return "bebida/cadastro";
 	}
-
+	
 	@GetMapping(value = "/despesas")
 	public String telaLista(Model model, @SessionAttribute("user") Usuario usuario) {
 
 		model.addAttribute("listaDespesas", despesaService.obterLista(usuario));
 		
-
 		return "despesa/lista";
 	}
-	
 
 	@PostMapping(value = "/despesa/incluir")
-	public String incluir(Model model, Despesa despesa,  @SessionAttribute("user") Usuario usuario) {
+	public String incluir(Model model, Despesa despesa, @SessionAttribute("user") Usuario usuario) {
+		
 		despesa.setUsuario(usuario);
 		
 		despesaService.incluir(despesa);
 
 		model.addAttribute("nome", despesa.getNome());
-		// return "redirect:/despesas";
+
 		return telaLista(model, usuario);
 	}
-
+	
 	@GetMapping(value = "/despesa/{id}/excluir")
-	public String excluir(@PathVariable Integer id) {
+    public String excluir(Model model,@PathVariable Integer id,@SessionAttribute("user") Usuario usuario) {
+       try {
+           despesaService.excluir(id);
 
-		despesaService.excluir(id);
+       }catch (Exception e) {
+           model.addAttribute("msg", "Não foi possível excluir essa despesa!");
+       }
 
-		return "redirect:/despesas";
-
-	}
+       return telaLista(model, usuario);
+       //return "redirect:/despesas";
+    }
 
 }
