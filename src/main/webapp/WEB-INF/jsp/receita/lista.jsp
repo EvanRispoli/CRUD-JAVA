@@ -33,7 +33,7 @@
 	<!-- Page content-->
 	<div class="container">	
 		
-		<a href="/solicitante">Nova receita</a>
+		<a href="/receita">Nova receita</a>
 	
 		<hr>
 			<c:if test="${not empty nome}">
@@ -65,15 +65,14 @@
 						</tr>
 					</thead>
 					<tbody>
-				dataVencimento, recorrente	
 						<c:forEach var="r" items="${listaReceitas }">
 							<tr>
 								<th>${r.id}</th>
 								<th>${r.nome}</th>
 								<th>${r.comentario}</th>
-								<th>${r.fonte}</th>**
+								<th>${r.fonte}</th>
 								<th>${r.categoria}</th>
-								<th>${r.recorrencia}</th>**
+								<th>${r.recorrencia}</th>
 								<th>${r.valor}</th>
 								<th>${r.tipo}</th>
 								<th>${r.dataVencimento}</th>

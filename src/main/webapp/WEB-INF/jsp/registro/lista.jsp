@@ -25,66 +25,63 @@
 <link href="./css/style.css" rel="stylesheet">
 
 </head>
-<body>
+<c:import url="/WEB-INF/jsp/Menu.jsp"/>
 
-	<!-- Responsive navbar-->
-	<!-- Responsive navbar-->
-	<c:import url="/WEB-INF/jsp/Menu.jsp" />
-	<!-- Page content-->
-	<div class="container">	
-		
-		<a href="/solicitante">Novo registro</a>
-	
-		<hr>
-			<c:if test="${not empty nome}">
-				<div class="alert alert-success">
-					<strong>Yess!</strong> ${nome} cadastrado(a) com sucesso!
-				</div>
+<div class="container">
 
-			</c:if>
+    <a href="/registro">Adicionar Registro</a>
+    <hr>
 
-			<c:if test="${not empty listaRegistros}">
+    <c:if test="${not empty msg}">
+        <div class="alert alert-danger">
+            <h5> Falha no Cadastramento: ${msg}</h5>
+        </div>
+    </c:if>
 
-				<h4>Listagem de registros (${listaRegistros.size()}):</h4>
+    <c:if test="${not empty descricao}">
+        <div class="alert alert-success">
+            <h5>Registro "${descricao}" cadastrado com sucesso</h5>
+        </div>
+    </c:if>
+
+    <c:if test="${not empty listaRegistros}">
+        <h4>Listagem de Registros (${listaRegistros.size()}):</h4>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Descrição</th>
+                <th>Planejado</th>
+                <th>Data</th>
+                <th>Solicitante</th>
+                <th>Categorias</th>
+                <th></th>
 
 
-				<table class="table table-striped">
-					<thead>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach var="r" items="${listaRegistros}">
+            id dataformatada solicitante descricao categorias  usuario
+                <tr>
+                    <td>${r.id}</td>
+                    <td>${r.descricao}</td>
+                    <td>${r.planejado}</td>
+                    <td>${r.dataFormatada}</td>
+                    <td>${r.solicitante.nome}</td>
+                    <td>${r.categorias.size()}</td>
 
-						<tr>
-							<th>#</th>
-							<th>Data</th>
-							<th>Descrição</th>
-							<th>Planejado</th>
-							<th>Solicitante</th>
-							<th>Usuario</th>
+                    <td><a href="/registro/excluir/${r.id}">Excluir</a></td>
 
-							<th></th>
-						</tr>
-					</thead>
-					<tbody>
-				dataVencimento, recorrente	
-						<c:forEach var="r" items="${listaRegistros }">
-							<tr>
-								<th>${r.id}</th>
-								<th>${r.data}</th>
-								<th>${r.descricao}</th>
-								<th>${r.planejado}</th>**
-								<th>${r.solicitante.nome}</th>**
-								<th>${r.usuario.nome}</th>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </c:if>
+    <c:if test="${empty listaRegistros}">
+        <h4>Nenhum  Registro Cadastrado</h4>
+    </c:if>
+</div>
 
-								<th><a href="/registro/${r.id}/excluir">Excluir</a></th>
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
-			</c:if>
-			<c:if test="${empty listaregistros}">
-				<h5>Não existem registros cadastradas!</h5>
-			</c:if>
-		</div>
-	</form>
-	<c:import url="/WEB-INF/jsp/footer.jsp" />
 </body>
-
 </html>

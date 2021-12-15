@@ -31,7 +31,7 @@ public class RegistroController {
 	@GetMapping(value = "/registro")
 	public String telaCadastro(Model model, @SessionAttribute("user") Usuario usuario) {
 
-		model.addAttribute("registros", categoriaService.obterLista(usuario));
+		model.addAttribute("categorias", categoriaService.obterLista(usuario));
 
 		model.addAttribute("solicitantes", solicitanteService.obterLista(usuario));
 
@@ -49,19 +49,21 @@ public class RegistroController {
 	@PostMapping(value = "/registro/incluir")
 	public String incluir(Model model, Registro registro, @RequestParam String[] categoriaIds,
 			@SessionAttribute("user") Usuario usuario) {
-
-		List<Categoria> listaCategoria = new ArrayList<Categoria>();
-
+		
 		registro.setUsuario(usuario);
+
+		List<Categoria> categorias = new ArrayList<Categoria>();
+
+		
 
 		for (String idCategoria : categoriaIds) {
 
 			Categoria categoria = categoriaService.obterPorId(Integer.valueOf(idCategoria));
 
-			listaCategoria.add(categoria);
+			categorias.add(categoria);
 		}
 
-		registro.setCategorias(listaCategoria);
+		registro.setCategorias(categorias);
 
 		registroService.incluir(registro);
 

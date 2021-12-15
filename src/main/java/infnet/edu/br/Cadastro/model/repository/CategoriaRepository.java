@@ -14,6 +14,6 @@ import infnet.edu.br.Cadastro.model.domain.Categoria;
 @Repository
 public interface CategoriaRepository extends CrudRepository<Categoria, Integer> {
 	@Query("from Categoria c where c.usuario.id =:id")
-	public List<Categoria> findAll(Integer id, Sort by);
+	public List<Categoria> findAll(Integer id);
 
 }

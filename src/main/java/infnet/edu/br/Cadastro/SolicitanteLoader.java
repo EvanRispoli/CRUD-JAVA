@@ -27,6 +27,8 @@ public class SolicitanteLoader implements ApplicationRunner {
 		solicitante.setUsuario(usuario);
 		
 		solicitanteService.incluir(solicitante);
+		
+		
 	}
 
 }

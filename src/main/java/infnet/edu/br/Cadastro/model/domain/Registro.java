@@ -14,6 +14,9 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+
 
 @Entity
 @Table(name = "registros")
@@ -21,22 +24,31 @@ public class Registro {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	private String descricao;
+	@Transient
     private LocalDateTime data;
+    private String dataFormatada;
     @OneToOne(cascade = CascadeType.DETACH) 
 	@JoinColumn(name = "idSolicitante")
 	private Solicitante solicitante;
-    private String descricao;
+    
     @ManyToMany(cascade = CascadeType.DETACH)
     private List<Categoria> categorias;
+    
+    
     private boolean planejado;
+    
     @ManyToOne
 	@JoinColumn(name = "idUsuario")
 	private Usuario usuario;
     
 
-	public Registro() {
-		data = LocalDateTime.now();
-	}
+    public Registro() {
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy-HH:mm");
+
+        this.data = LocalDateTime.now();
+        this.dataFormatada = this.data.format(formato);
+    }
 	
 	@Override
 	public String toString() {
@@ -68,6 +80,14 @@ public class Registro {
 
 
 
+
+	public String getDataFormatada() {
+		return dataFormatada;
+	}
+
+	public void setDataFormatada(String dataFormatada) {
+		this.dataFormatada = dataFormatada;
+	}
 
 	public Integer getId() {
 		return id;

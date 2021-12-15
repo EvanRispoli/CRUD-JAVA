@@ -23,6 +23,42 @@ public class Usuario {
 	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
 	@JoinColumn(name = "idUsuario")
 	private List<Solicitante> solicitantes;
+	
+	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+	@JoinColumn(name = "idUsuario")
+	private List<Categoria> categorias;
+	
+	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+	@JoinColumn(name = "idUsuario")
+	private List<Registro> registros;
+
+	
+	
+	
+	
+	public List<Categoria> getCategorias() {
+		return categorias;
+	}
+
+	public void setCategorias(List<Categoria> categorias) {
+		this.categorias = categorias;
+	}
+
+	public List<Solicitante> getSolicitantes() {
+		return solicitantes;
+	}
+
+	public void setSolicitantes(List<Solicitante> solicitantes) {
+		this.solicitantes = solicitantes;
+	}
+
+	public List<Registro> getRegistros() {
+		return registros;
+	}
+
+	public void setRegistros(List<Registro> registros) {
+		this.registros = registros;
+	}
 
 	public Integer getId() {
 		return id;

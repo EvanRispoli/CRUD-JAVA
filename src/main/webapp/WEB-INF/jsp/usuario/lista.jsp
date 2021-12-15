@@ -56,7 +56,9 @@
 							<th>#</th>
 							<th>Nome</th>
 							<th>E-mail</th>
-							<th>Cadastros</th>
+							<th>Solicitantes</th>
+							<th>Categorias</th>
+							<th>Pedidos</th>
 							<c:if test="${user.admin}">
 							    <th><th>
 							</c:if>
@@ -69,7 +71,9 @@
 								<th>${u.id}</th>
 								<th>${u.nome}</th>
 								<th>${u.email}</th>
-								<th>${u.clientes.size()}</th>
+								<th>${u.solicitantes.size()}</th>
+								<th>${u.categorias.size()}</th>
+								<th>${u.registros.size()}</th>
 								<c:if test="${user.admin}">
                                     <th><a href="/usuario/${u.id}/excluir">Excluir</a></th>
                                 </c:if>

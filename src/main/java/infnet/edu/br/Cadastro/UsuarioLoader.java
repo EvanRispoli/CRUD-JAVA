@@ -31,12 +31,12 @@ public class UsuarioLoader implements ApplicationRunner  {
 		
 		
 		Usuario usuario = new Usuario();
-		usuario.setId(1);
+		usuario.setEndereco(endereco);
 		usuario.setEmail("rodrigo@magalhaes.com");
 		usuario.setNome("Rodrigo Magalhães");
 		usuario.setSenha("123");
 		usuario.setAdmin(true);
-		usuario.setEndereco(endereco);
+		
 		usuarioService.incluir(usuario);
 
 

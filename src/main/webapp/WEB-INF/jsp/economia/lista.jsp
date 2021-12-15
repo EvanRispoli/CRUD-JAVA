@@ -34,7 +34,7 @@
 	<!-- Page content-->
 	<div class="container">	
 		
-		<a href="/solicitante">Nova economia</a>
+		<a href="/economia">Nova economia</a>
 	
 		<hr>
 			<c:if test="${not empty nome}">

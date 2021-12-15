@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "categorias")
@@ -24,12 +25,15 @@ public abstract class Categoria {
     private String nome;
     private String comentario;
     private String categoria;
+    @Transient
     private boolean recorrente;
     private float valor;
     private String tipo;
 	@ManyToOne
 	@JoinColumn(name = "idUsuario")
 	private Usuario usuario;
+	
+	
 	@ManyToMany(mappedBy = "categorias")
 	private List<Registro> registros;
 

@@ -50,11 +50,9 @@
 						<th>Descrição</th>
 						<th>Vencimento</th>
 						<th>Nome</th>
-						<th>Recorrente</th>
 						<th>Tipo</th>
 						<th>Valor</th>
 						<th>Usuario</th>
-						
 						<th></th>
 					</tr>
 				</thead>
