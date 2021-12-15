@@ -40,15 +40,15 @@
 
       <div class="form-group ">
         <label for="nome" class="form-label">Nome:</label> <input type="text" class="form-control" id="nome"
-          placeholder="Informe um nome" name="nome" required autofocus>
+          placeholder="Informe um nome" name="nome" required autofocus value= "Marica 2022">
       </div>
       <div class="form-group ">
         <label for="descricao" class="form-label">Descrição:</label> <input type="text" class="form-control"
-          id="descricao" placeholder="Informações adicionais" name="comentario" required autofocus>
+          id="descricao" placeholder="Informações adicionais" name="comentario" required autofocus value= "Poupanca">
       </div>
       <div class="form-group ">
         <label for="objetivo" class="form-label">Objetivo:</label> <input type="text" class="form-control"
-          id="objetivo" placeholder="Informe um objetivo" name="objetivo" required autofocus>
+          id="objetivo" placeholder="Informe um objetivo" name="objetivo" required autofocus value= "Churrasco na casa Do Elberth" >
       </div>
 
       <div class="form-group">
@@ -88,7 +88,7 @@
 
       <div class="form-group">
         <label for="valor" class="form-label">Valor (R$):</label> <input type="number" format="currency" step="0.01"
-          class="form-control" id="valor" placeholder="Informe um valor" name="valor" required autofocus>
+          class="form-control" id="valor" placeholder="Informe um valor" name="valor" required autofocus value= "3000">
       </div>
 
       <div class="form-group">

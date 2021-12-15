@@ -6,7 +6,7 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="ISO-8859-1">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description"
     content="Assessment da disciplina Desenvolvimento Web com Java EE ministrada pelo professo Elberth Moraes">
@@ -37,16 +37,16 @@
     <form class="form-cadastro" action="/solicitante/incluir" method="post">
     <div class="form-group ">
       <label for="nome">Nome:</label> <input type="text" class="form-control" id="nome" placeholder="Informe um nome"
-        name="nome" required autofocus value="Elberth">
+        name="nome" required autofocus value="Alberto Moraes">
     </div>
 
     <div class="form-group">
       <label for="email">Email:</label> <input type="email" class="form-control" id="email"
-        placeholder="Informe um email" name="email" required autofocus value="elberth@moraes.com">
+        placeholder="Informe um email" name="email" required autofocus value="alberto@moraes.com">
     </div>
     <div class="form-group">
       <label for="cpf">CPF:</label> <input type="text" class="form-control" id="cpf"
-        placeholder="xxx.xxx.xxx-xx" name="cpf"  pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}\-[0-9]{2}" required autofocus>
+        placeholder="xxx.xxx.xxx-xx" value = "123.456.789-10" name="cpf"  pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}\-[0-9]{2}" required autofocus>
     </div>
 
     <button class="btn btn-lg btn-secondary btn-block" type="submit">Cadastrar</button>

@@ -6,7 +6,7 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="ISO-8859-1">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description"
     content="Assessment da disciplina Desenvolvimento Web com Java EE ministrada pelo professo Elberth Moraes">
@@ -40,15 +40,15 @@
 
       <div class="form-group ">
         <label for="nome" class="form-label">Nome:</label> <input type="text" class="form-control" id="nome"
-          placeholder="Informe um nome" name="nome" required autofocus>
+          placeholder="Informe um nome" name="nome" required autofocus value="Multa">
       </div>
       <div class="form-group ">
         <label for="descricao" class="form-label">Descrição:</label> <input type="text" class="form-control"
-          id="descricao" placeholder="Informações adicionais" name="comentario" required autofocus>
+          id="descricao" placeholder="Informações adicionais" name="comentario" required autofocus value="Boleto" >
       </div>
       <div class="form-group ">
         <label for="beneficiario" class="form-label">Beneficiário:</label> <input type="text" class="form-control"
-          id="beneficiario" placeholder="Informe um beneficiário" name="beneficiario" required autofocus>
+          id="beneficiario" placeholder="Informe um beneficiário" name="beneficiario" required autofocus value="DETRAN-SP">
       </div>
 
       <div class="form-group">

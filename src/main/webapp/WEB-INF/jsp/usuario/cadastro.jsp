@@ -3,7 +3,7 @@
 	pageEncoding="ISO-8859-1"%>
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="ISO-8859-1">
 
 <head>
   <meta charset="utf-8">
@@ -38,7 +38,7 @@
     <div class="row container-fluid mt-3">
       <div class="row">
         <div class="col-10 ">
-        <input type="text" class="form-control" id="cep" placeholder="Informe um CEP"
+        <input type="text" class="form-control" id="cep" value ="20010020" placeholder="Informe um CEP"
         name="cep" required autofocus>
         </div>
         <div class="col-2">
