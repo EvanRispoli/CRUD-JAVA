@@ -1,5 +1,5 @@
-package infnet.edu.br.Cadastro.model.controller;
 
+package infnet.edu.br.Cadastro.model.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,32 +23,38 @@ public class EconomiaController {
 	public String telaCadastro() {
 		return "economia/cadastro";
 	}
-
+	
 	@GetMapping(value = "/economias")
 	public String telaLista(Model model, @SessionAttribute("user") Usuario usuario) {
 
 		model.addAttribute("listaEconomias", economiaService.obterLista(usuario));
-
+		
 		return "economia/lista";
 	}
 
 	@PostMapping(value = "/economia/incluir")
 	public String incluir(Model model, Economia economia, @SessionAttribute("user") Usuario usuario) {
+		
 		economia.setUsuario(usuario);
+		
 		economiaService.incluir(economia);
 
 		model.addAttribute("nome", economia.getNome());
-		// return "redirect:/economias";
+
 		return telaLista(model, usuario);
 	}
-
+	
 	@GetMapping(value = "/economia/{id}/excluir")
-	public String excluir(@PathVariable Integer id) {
+    public String excluir(Model model,@PathVariable Integer id,@SessionAttribute("user") Usuario usuario) {
+       try {
+           economiaService.excluir(id);
 
-		economiaService.excluir(id);
+       }catch (Exception e) {
+           model.addAttribute("msg", "Não foi possível excluir essa economia!");
+       }
 
-		return "economia/lista";
-
-	}
+       return telaLista(model, usuario);
+       
+    }
 
 }

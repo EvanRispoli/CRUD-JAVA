@@ -12,24 +12,29 @@ import infnet.edu.br.Cadastro.model.service.CategoriaService;
 
 @Controller
 public class CategoriaController {
-	
+
 	@Autowired
 	private CategoriaService categoriaService;
-	
+
 	@GetMapping(value = "/categorias")
 	public String telaLista(Model model, @SessionAttribute("user") Usuario usuario) {
 
 		model.addAttribute("listaCategorias", categoriaService.obterLista(usuario));
-		
+
 		return "categoria/lista";
 	}
-	
-	@GetMapping(value = "/categoria/{id}/excluir")
-	public String excluir(@PathVariable Integer id) {
-		
-		categoriaService.excluir(id);
 
-		return "redirect:/categorias";
+	@GetMapping(value = "/categoria/{id}/excluir")
+	public String excluir(Model model, @PathVariable Integer id, @SessionAttribute("user") Usuario usuario) {
+		try {
+			categoriaService.excluir(id);
+
+		} catch (Exception e) {
+			model.addAttribute("msg", "Não foi possível excluir essa categoria!");
+		}
+
+		return telaLista(model, usuario);
+
 	}
 
 }

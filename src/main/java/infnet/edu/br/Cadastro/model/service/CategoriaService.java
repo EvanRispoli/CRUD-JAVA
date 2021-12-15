@@ -24,7 +24,7 @@ public class CategoriaService {
 		return categoriaRepository.findById(id).orElse(null);
 	}
 	public List<Categoria> obterLista(Usuario usuario){
-		return (List<Categoria>) categoriaRepository.findAll(usuario.getId());
+		return (List<Categoria>) categoriaRepository.findAll(usuario.getId(), Sort.by(Sort.Direction.ASC, "nome"));
 	}
 
 }

@@ -14,24 +14,23 @@ public class ReceitaService {
     @Autowired
     private ReceitaRepository receitaRepository;
 
-    public void incluir(Receita despesa) {
-        receitaRepository.save(despesa);
+    public void incluir (Receita receita){
+        receitaRepository.save(receita);
 
     }
 
-    public void excluir(Integer id) {
+    public void excluir (Integer id){
         receitaRepository.deleteById(id);
 
     }
 
-    public Receita obterPorId(Integer id) {
+    public Receita obterPorId (Integer id){
         return receitaRepository.findById(id).orElse(null);
 
     }
 
-    public List<Receita> obterLista(Usuario usuario) {
+    public List<Receita> obterLista (Usuario usuario){
         return (List<Receita>) receitaRepository.findAll(usuario.getId(), Sort.by(Sort.Direction.ASC, "nome"));
 
     }
-
 }

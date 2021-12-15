@@ -32,62 +32,69 @@
 	<!-- Responsive navbar-->
 	<c:import url="/WEB-INF/jsp/Menu.jsp" />
 	<!-- Page content-->
-	<div class="container">	
-		
+	<div class="container">
+
 		<a href="/despesa">Nova despesa</a>
-	
+
 		<hr>
-			<c:if test="${not empty nome}">
-				<div class="alert alert-success">
-					<strong>Yess!</strong> ${nome} cadastrado(a) com sucesso!
-				</div>
-
-			</c:if>
-
-			<c:if test="${not empty listaDespesas}">
-
-				<h4>Listagem de despesas (${listaDespesas.size()}):</h4>
+		<c:if test="${not empty msg}">
+			<div class="alert alert-danger">
+				<h5>Falha ao excluir: ${msg}</h5>
+			</div>
+		</c:if>
 
 
-				<table class="table table-striped">
-					<thead>
+		<c:if test="${not empty nome}">
+			<div class="alert alert-success">
+				<strong>Yess!</strong> ${nome} cadastrado(a) com sucesso!
+			</div>
 
+		</c:if>
+
+		<c:if test="${not empty listaDespesas}">
+
+			<h4>Listagem de despesas (${listaDespesas.size()}):</h4>
+
+
+			<table class="table table-striped">
+				<thead>
+
+					<tr>
+						<th>#</th>
+						<th>Nome</th>
+						<th>DescriÃ§Ã£o</th>
+						<th>BeneficiÃ¡rio</th>
+						<th>Categoria</th>
+						<th>RecorrÃªncia</th>
+						<th>Valor</th>
+						<th>Tipo</th>
+						<th>Vencimento</th>
+
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="d" items="${listaDespesas }">
 						<tr>
-							<th>#</th>
-							<th>Nome</th>
-							<th>Descrição</th>
-							<th>Beneficiário</th>
-							<th>Categoria</th>
-							<th>Recorrência</th>
-							<th>Valor</th>
-							<th>Tipo</th>
-							<th>Vencimento</th>
-							
-							<th></th>
+							<th>${d.id}</th>
+							<th>${d.nome}</th>
+							<th>${d.comentario}</th>
+							<th>${d.beneficiario}</th>
+							<th>${d.categoria}</th>
+							<th>${d.recorrencia}</th>
+							<th>${d.valor}</th>
+							<th>${d.tipo}</th>
+							<th>${d.dataVencimento}</th>
+							<th><a href="/despesa/${d.id}/excluir">Excluir</a></th>
 						</tr>
-					</thead>
-					<tbody>
-						<c:forEach var="d" items="${listaDespesas }">
-							<tr>
-								<th>${d.id}</th>
-								<th>${d.nome}</th>
-								<th>${d.comentario}</th>
-								<th>${d.beneficiario}</th>
-								<th>${d.categoria}</th>
-								<th>${d.recorrencia}</th>
-								<th>${d.valor}</th>
-								<th>${d.tipo}</th>
-								<th>${d.dataVencimento}</th>
-								<th><a href="/despesa/${d.id}/excluir">Excluir</a></th>
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
-			</c:if>
-			<c:if test="${empty listaDespesas}">
-				<h5>Não existem despesas cadastradas!</h5>
-			</c:if>
-		</div>
+					</c:forEach>
+				</tbody>
+			</table>
+		</c:if>
+		<c:if test="${empty listaDespesas}">
+			<h5>NÃ£o existem despesas cadastradas!</h5>
+		</c:if>
+	</div>
 	</form>
 </body>
 

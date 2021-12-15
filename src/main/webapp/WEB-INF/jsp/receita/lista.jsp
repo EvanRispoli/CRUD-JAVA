@@ -31,61 +31,68 @@
 	<!-- Responsive navbar-->
 	<c:import url="/WEB-INF/jsp/Menu.jsp" />
 	<!-- Page content-->
-	<div class="container">	
-		
+	<div class="container">
+
 		<a href="/receita">Nova receita</a>
-	
+
 		<hr>
-			<c:if test="${not empty nome}">
-				<div class="alert alert-success">
-					<strong>Yess!</strong> ${nome} cadastrado(a) com sucesso!
-				</div>
-
-			</c:if>
-
-			<c:if test="${not empty listaReceitas}">
-
-				<h4>Listagem de receitas (${listaReceitas.size()}):</h4>
+		<c:if test="${not empty msg}">
+			<div class="alert alert-danger">
+				<h5>Falha ao excluir: ${msg}</h5>
+			</div>
+		</c:if>
 
 
-				<table class="table table-striped">
-					<thead>
+		<c:if test="${not empty nome}">
+			<div class="alert alert-success">
+				<strong>Yess!</strong> ${nome} cadastrado(a) com sucesso!
+			</div>
 
+		</c:if>
+
+		<c:if test="${not empty listaReceitas}">
+
+			<h4>Listagem de receitas (${listaReceitas.size()}):</h4>
+
+
+			<table class="table table-striped">
+				<thead>
+
+					<tr>
+						<th>#</th>
+						<th>Nome</th>
+						<th>Descrição</th>
+						<th>Beneficiário</th>
+						<th>Categoria</th>
+						<th>Recorrência</th>
+						<th>Valor</th>
+						<th>Tipo</th>
+						<th>Vencimento</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="r" items="${listaReceitas }">
 						<tr>
-							<th>#</th>
-							<th>Nome</th>
-							<th>Descrição</th>
-							<th>Beneficiário</th>
-							<th>Categoria</th>
-							<th>Recorrência</th>
-							<th>Valor</th>
-							<th>Tipo</th>
-							<th>Vencimento</th>
-							<th></th>
+							<th>${r.id}</th>
+							<th>${r.nome}</th>
+							<th>${r.comentario}</th>
+							<th>${r.fonte}</th>
+							<th>${r.categoria}</th>
+							<th>${r.recorrencia}</th>
+							<th>${r.valor}</th>
+							<th>${r.tipo}</th>
+							<th>${r.dataVencimento}</th>
+							<th><a href="/receita/${r.id}/excluir">Excluir</a></th>
 						</tr>
-					</thead>
-					<tbody>
-						<c:forEach var="r" items="${listaReceitas }">
-							<tr>
-								<th>${r.id}</th>
-								<th>${r.nome}</th>
-								<th>${r.comentario}</th>
-								<th>${r.fonte}</th>
-								<th>${r.categoria}</th>
-								<th>${r.recorrencia}</th>
-								<th>${r.valor}</th>
-								<th>${r.tipo}</th>
-								<th>${r.dataVencimento}</th>
-								<th><a href="/receita/${r.id}/excluir">Excluir</a></th>
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
-			</c:if>
-			<c:if test="${empty listaReceitas}">
-				<h5>Não existem receitas cadastradas!</h5>
-			</c:if>
-		</div>
+					</c:forEach>
+				</tbody>
+			</table>
+		</c:if>
+		<c:if test="${empty listaReceitas}">
+			<h5>Não existem receitas cadastradas!</h5>
+		</c:if>
+	</div>
 	</form>
 	<c:import url="/WEB-INF/jsp/footer.jsp" />
 </body>

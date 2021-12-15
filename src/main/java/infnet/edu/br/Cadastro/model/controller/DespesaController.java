@@ -9,10 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import infnet.edu.br.Cadastro.model.domain.Despesa;
-import infnet.edu.br.Cadastro.model.domain.Receita;
 import infnet.edu.br.Cadastro.model.domain.Usuario;
 import infnet.edu.br.Cadastro.model.service.DespesaService;
-import infnet.edu.br.Cadastro.model.service.ReceitaService;
 
 @Controller
 public class DespesaController {
@@ -22,7 +20,7 @@ public class DespesaController {
 
 	@GetMapping(value = "/despesa")
 	public String telaCadastro() {
-		return "bebida/cadastro";
+		return "despesa/cadastro";
 	}
 	
 	@GetMapping(value = "/despesas")
@@ -55,7 +53,7 @@ public class DespesaController {
        }
 
        return telaLista(model, usuario);
-       //return "redirect:/despesas";
+       
     }
 
 }

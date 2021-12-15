@@ -32,61 +32,68 @@
 	<!-- Responsive navbar-->
 	<c:import url="/WEB-INF/jsp/Menu.jsp" />
 	<!-- Page content-->
-	<div class="container">	
-		
+	<div class="container">
+
 		<a href="/economia">Nova economia</a>
-	
+
 		<hr>
-			<c:if test="${not empty nome}">
-				<div class="alert alert-success">
-					<strong>Yess!</strong> ${nome} cadastrado(a) com sucesso!
-				</div>
-
-			</c:if>
-
-			<c:if test="${not empty listaEconomias}">
-
-				<h4>Listagem de economias (${listaEconomias.size()}):</h4>
+		<c:if test="${not empty msg}">
+			<div class="alert alert-danger">
+				<h5>Falha ao excluir: ${msg}</h5>
+			</div>
+		</c:if>
 
 
-				<table class="table table-striped">
-					<thead>
+		<c:if test="${not empty nome}">
+			<div class="alert alert-success">
+				<strong>Yess!</strong> ${nome} cadastrado(a) com sucesso!
+			</div>
 
+		</c:if>
+
+		<c:if test="${not empty listaEconomias}">
+
+			<h4>Listagem de economias (${listaEconomias.size()}):</h4>
+
+
+			<table class="table table-striped">
+				<thead>
+
+					<tr>
+						<th>#</th>
+						<th>Nome</th>
+						<th>Descrição</th>
+						<th>Objetivo</th>
+						<th>Categoria</th>
+						<th>Recorrência</th>
+						<th>Valor</th>
+						<th>Vencimento</th>
+						<th>Tipo</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="e" items="${listaEconomias }">
 						<tr>
-							<th>#</th>
-							<th>Nome</th>
-							<th>Descrição</th>
-							<th>Objetivo</th>
-							<th>Categoria</th>
-							<th>Recorrência</th>
-							<th>Valor</th>
-							<th>Vencimento</th>
-							<th>Tipo</th>
-							<th></th>
+							<th>${e.id}</th>
+							<th>${e.nome}</th>
+							<th>${e.comentario}</th>
+							<th>${e.objetivo}</th>
+							<th>${e.categoria}</th>
+							<th>${e.recorrencia}</th>
+							<th>${e.valor}</th>
+							<th>${e.dataVencimento}</th>
+							<th>${e.tipo}</th>
+							<th><a href="/economia/${e.id}/excluir">Excluir</a></th>
 						</tr>
-					</thead>
-					<tbody>
-						<c:forEach var="e" items="${listaEconomias }">
-							<tr>
-								<th>${e.id}</th>
-								<th>${e.nome}</th>
-								<th>${e.comentario}</th>
-								<th>${e.objetivo}</th>
-								<th>${e.categoria}</th>
-								<th>${e.recorrencia}</th>
-								<th>${e.valor}</th>
-								<th>${e.dataVencimento}</th>
-								<th>${e.tipo}</th>
-								<th><a href="/economia/${d.id}/excluir">Excluir</a></th>
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
-			</c:if>
-			<c:if test="${empty listaEconomias}">
-				<h5>Não existem economias cadastradas!</h5>
-			</c:if>
-		</div>
+					</c:forEach>
+				</tbody>
+			</table>
+		</c:if>
+		<c:if test="${empty listaEconomias}">
+			<h5>Não existem economias cadastradas!</h5>
+		</c:if>
+	</div>
 	</form>
 	<c:import url="/WEB-INF/jsp/footer.jsp" />
 </body>

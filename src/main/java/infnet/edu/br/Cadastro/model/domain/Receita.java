@@ -8,27 +8,14 @@ import javax.persistence.*;
 @Entity
 @Table(name = "receitas")
 public class Receita extends Categoria {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
     private String fonte;
     private int opcaoRecorrencia;
     private String recorrencia;
     
-    
-    
-
-    public Integer getId() {
-        return id;
-    }
-
     public Receita() {
 		super();
 	}
 
-	public void setId(Integer id) {
-        this.id = id;
-    }
 
     public Receita(String dataVencimento, String nome, String comentario, String categoria, boolean recorrente, float valor, String tipo) {
         super(dataVencimento, nome, comentario, categoria, recorrente, valor, tipo);

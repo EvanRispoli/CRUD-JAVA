@@ -7,9 +7,8 @@ import javax.persistence.*;
 @Entity
 @Table(name = "despesas")
 public class Despesa extends Categoria{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+
+
     private String beneficiario;
     private int opcaoRecorrencia;
     private String recorrencia;
@@ -47,13 +46,6 @@ public class Despesa extends Categoria{
         return getRecorrencia();
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getBeneficiario() {
         return beneficiario;

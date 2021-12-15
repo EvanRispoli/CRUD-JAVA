@@ -8,9 +8,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "economias")
 public class Economia extends Categoria {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+
 
     private String objetivo;
     private int opcaoRecorrencia;
@@ -22,13 +20,6 @@ public class Economia extends Categoria {
 		super();
 	}
 
-	public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public Economia(String data, String nome, String comentario, String categoria, boolean recorrente, float valor, String tipo) {
         super(data, nome, comentario, categoria, recorrente, valor, tipo);

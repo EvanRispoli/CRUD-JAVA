@@ -30,7 +30,13 @@
 	<c:import url="/WEB-INF/jsp/Menu.jsp" />
 
 	<div class="container">
-		
+	
+		<hr>
+		<c:if test="${not empty msg}">
+			<div class="alert alert-danger">
+				<h5>Falha ao excluir: ${msg}</h5>
+			</div>
+		</c:if>
 
 		<c:if test="${not empty categoria}">
 			<div class="alert alert-success">
@@ -59,7 +65,7 @@
 				<tbody>
 					<c:forEach var="c" items="${listaCategorias}">
 						<tr>
-							
+
 							<td>${c.id}</td>
 							<td>${c.categoria}</td>
 							<td>${c.comentario}</td>
@@ -68,7 +74,7 @@
 							<td>${c.tipo}</td>
 							<td>${c.valor}</td>
 							<td>${c.usuario.nome}</td>
-							<td><a href="/categoria/${p.id}/excluir">Excluir</a></td>
+							<td><a href="/categoria/${c.id}/excluir">Excluir</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

@@ -25,62 +25,63 @@
 <link href="./css/style.css" rel="stylesheet">
 
 </head>
-<c:import url="/WEB-INF/jsp/Menu.jsp"/>
+<c:import url="/WEB-INF/jsp/Menu.jsp" />
 
 <div class="container">
 
-    <a href="/registro">Adicionar Registro</a>
-    <hr>
-
-    <c:if test="${not empty msg}">
-        <div class="alert alert-danger">
-            <h5> Falha no Cadastramento: ${msg}</h5>
-        </div>
-    </c:if>
-
-    <c:if test="${not empty descricao}">
-        <div class="alert alert-success">
-            <h5>Registro "${descricao}" cadastrado com sucesso</h5>
-        </div>
-    </c:if>
-
-    <c:if test="${not empty listaRegistros}">
-        <h4>Listagem de Registros (${listaRegistros.size()}):</h4>
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>Id</th>
-                <th>Descrição</th>
-                <th>Planejado</th>
-                <th>Data</th>
-                <th>Solicitante</th>
-                <th>Categorias</th>
-                <th></th>
+	<a href="/registro">Adicionar Registro</a>
+	<hr>
+	<c:if test="${not empty msg}">
+		<div class="alert alert-danger">
+			<h5>Falha ao excluir: ${msg}</h5>
+		</div>
+	</c:if>
 
 
-            </tr>
-            </thead>
-            <tbody>
-            <c:forEach var="r" items="${listaRegistros}">
+	<c:if test="${not empty nome}">
+		<div class="alert alert-success">
+			<strong>Yess!</strong> ${nome} cadastrado(a) com sucesso!
+		</div>
+
+	</c:if>
+
+	<c:if test="${not empty listaRegistros}">
+		<h4>Listagem de Registros (${listaRegistros.size()}):</h4>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Descrição</th>
+					<th>Planejado</th>
+					<th>Data</th>
+					<th>Solicitante</th>
+					<th>Categorias</th>
+					<th></th>
+
+
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="r" items="${listaRegistros}">
             id dataformatada solicitante descricao categorias  usuario
                 <tr>
-                    <td>${r.id}</td>
-                    <td>${r.descricao}</td>
-                    <td>${r.planejado}</td>
-                    <td>${r.dataFormatada}</td>
-                    <td>${r.solicitante.nome}</td>
-                    <td>${r.categorias.size()}</td>
+						<td>${r.id}</td>
+						<td>${r.descricao}</td>
+						<td>${r.planejado}</td>
+						<td>${r.dataFormatada}</td>
+						<td>${r.solicitante.nome}</td>
+						<td>${r.categorias.size()}</td>
 
-                    <td><a href="/registro/excluir/${r.id}">Excluir</a></td>
+						<td><a href="/registro/excluir/${r.id}">Excluir</a></td>
 
-                </tr>
-            </c:forEach>
-            </tbody>
-        </table>
-    </c:if>
-    <c:if test="${empty listaRegistros}">
-        <h4>Nenhum  Registro Cadastrado</h4>
-    </c:if>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</c:if>
+	<c:if test="${empty listaRegistros}">
+		<h4>Nenhum Registro Cadastrado</h4>
+	</c:if>
 </div>
 
 </body>

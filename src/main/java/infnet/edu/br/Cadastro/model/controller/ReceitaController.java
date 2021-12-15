@@ -22,32 +22,38 @@ public class ReceitaController {
 	public String telaCadastro() {
 		return "receita/cadastro";
 	}
-
+	
 	@GetMapping(value = "/receitas")
 	public String telaLista(Model model, @SessionAttribute("user") Usuario usuario) {
 
 		model.addAttribute("listaReceitas", receitaService.obterLista(usuario));
-
+		
 		return "receita/lista";
 	}
 
 	@PostMapping(value = "/receita/incluir")
 	public String incluir(Model model, Receita receita, @SessionAttribute("user") Usuario usuario) {
+		
 		receita.setUsuario(usuario);
+		
 		receitaService.incluir(receita);
 
 		model.addAttribute("nome", receita.getNome());
-		// return "redirect:/receitas";
+
 		return telaLista(model, usuario);
 	}
-
+	
 	@GetMapping(value = "/receita/{id}/excluir")
-	public String excluir(@PathVariable Integer id) {
+    public String excluir(Model model,@PathVariable Integer id,@SessionAttribute("user") Usuario usuario) {
+       try {
+           receitaService.excluir(id);
 
-		receitaService.excluir(id);
+       }catch (Exception e) {
+           model.addAttribute("msg", "Não foi possível excluir essa receita!");
+       }
 
-		return "redirect:/receitas";
-
-	}
+       return telaLista(model, usuario);
+       
+    }
 
 }

@@ -36,17 +36,18 @@
 		<a href="/solicitante">Novo solicitante</a>
 	
 		<hr>
-		
-		<c:if test="${not empty mensagem}">
+		<c:if test="${not empty msg}">
 			<div class="alert alert-danger">
-				 <strong>Atenção!</strong> ${mensagem}
+				<h5>Falha ao excluir: ${msg}</h5>
 			</div>
 		</c:if>
 
+
 		<c:if test="${not empty nome}">
 			<div class="alert alert-success">
-				 <strong>Confirmação!</strong> Solicitante ${nome} cadastrado com sucesso!!!
+				<strong>Yess!</strong> ${nome} cadastrado(a) com sucesso!
 			</div>
+
 		</c:if>
 		
 		<c:if test="${not empty listaSolicitantes}">

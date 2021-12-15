@@ -71,13 +71,17 @@ public class RegistroController {
 
 		return telaLista(model, usuario);
 	}
+	@GetMapping(value = "/registro/excluir/{id}")
+    public String excluir(Model model,@PathVariable Integer id,@SessionAttribute("user") Usuario usuario) {
+       try {
+           registroService.excluir(id);
 
-	@GetMapping(value = "/registro/{id}/excluir")
-	public String excluir(@PathVariable Integer id) {
+       }catch (Exception e) {
+           model.addAttribute("msg", "Não foi possível excluir esse registro!");
+       }
 
-		registroService.excluir(id);
-
-		return "redirect:/registros";
-	}
+       return telaLista(model, usuario);
+       
+    }
 
 }
